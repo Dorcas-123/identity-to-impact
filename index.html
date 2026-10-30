@@ -855,7 +855,23 @@ main::before { display:none !important; }
 .activity-refined .activity-toolbar .secondary{background:#f2f1eb;color:#446354}
 .activity-refined .activity-toolbar button:hover,.activity-refined .activity-toolbar a:hover{background:#d7e9dc;transform:translateY(-1px)}
 .activity-refined .activity-toolbar button:focus-visible,.activity-refined .activity-toolbar a:focus-visible{outline:3px solid #5e9f81;outline-offset:3px}
-</style><style>.pdf-card-button{margin:8px 0 0;border:1px solid #c5d9cc;border-radius:12px;padding:9px 12px;background:#f5faf6;color:#285840;font:600 13px inherit;cursor:pointer}.pdf-card-button:hover{background:#e4f0e7}.pdf-open{cursor:pointer}</style></head>
+</style><style>.pdf-card-button{margin:8px 0 0;border:1px solid #c5d9cc;border-radius:12px;padding:9px 12px;background:#f5faf6;color:#285840;font:600 13px inherit;cursor:pointer}.pdf-card-button:hover{background:#e4f0e7}.pdf-open{cursor:pointer}</style><style id="i2i-downloads">
+.top .dl-pill{display:block;margin-left:.25rem;padding:.4rem .7rem;border-radius:999px;background:transparent;color:var(--muted) !important;font-weight:650;font-size:.95rem;min-height:44px;text-decoration:none;white-space:nowrap;transition:filter .15s,background-color .15s,transform .15s}
+.top .dl-pill:hover{color:var(--ink) !important;background:var(--leaf-soft)}
+.top .dl-pill[aria-current="page"]{background:#E2F0DF;color:#275D41 !important;font-weight:700}
+@media (max-width:40rem){.top .dl-pill{order:2;margin:0;padding:.32rem .65rem;font-size:.9rem}}
+.dlc-note{margin:.2rem 0 0;color:var(--ink)}
+.dlc-list{display:grid;gap:.9rem;margin:1.2rem 0 1.4rem}
+.dlc-card{display:flex;gap:1.1rem;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--leaf);border-radius:14px;padding:1rem 1.15rem}
+.dlc-card h3{margin:0 0 .15rem;font-size:1.18rem;color:var(--ink)}
+.dlc-sub{margin:0 0 .4rem;color:var(--muted);font-size:.95rem}
+.dlc-acts{margin:0;font-size:.93rem;color:var(--ink)}
+.dlc-actions{display:flex;flex-direction:column;gap:.5rem;flex:0 0 auto;min-width:13rem}
+.dlc-actions .dlbtn{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;margin:0}
+.dlc-full .dlrow .dlbtn{min-width:13rem}
+.dlc-card.dlc-picked{border-color:var(--sun);border-left-color:var(--leaf);box-shadow:0 0 0 3px var(--sun-soft)}
+@media (max-width:40rem){.dlc-card{flex-direction:column;align-items:stretch}.dlc-actions{min-width:0}}
+</style></head>
 <body><div aria-hidden="true" class="itl-flow-field"></div>
 <header class="top">
 <div class="top-inner">
@@ -863,7 +879,7 @@ main::before { display:none !important; }
 <nav aria-label="Toolkit sections">
 <ul><li><a data-group="about" href="#start">Home</a></li><li><a data-group="plan" href="#plan">Plan</a></li><li><a data-group="library" href="#library">Activities</a></li><li><a data-group="guides" href="#leaders">Guides</a></li><li><a data-group="forms" href="#kit">Forms</a></li></ul>
 </nav>
-<a class="dl-pill" data-website-only="" href="#download">Download</a></div>
+<a class="dl-pill" data-website-only="" href="#download">Downloads</a></div>
 <div aria-label="Pages in this section" class="subnav" hidden="" id="subnav"></div>
 </header>
 <main>
@@ -946,23 +962,41 @@ main::before { display:none !important; }
 <h3>What it costs</h3>
 <p>The toolkit is free. Most materials are recycled or easy to find, and a few cost a little.</p>
 <div class="next"><a href="#start">Back: Home</a><a href="#facilitators">Next: Run a session</a></div>
-</section><section class="view" data-view="download" data-website-only=""><h2>Download</h2>
-<p class="lede">Save what you need to your phone or computer. Downloads work offline.</p>
-<div class="ui-pcard"><h3>One theme pack</h3>
-<p>Everything for one session: the theme’s session plan, Bible passage and reflection, its activities with full steps, safety, and pictures, the session flow, and the forms you need.</p>
-<div class="sesspick"><label>Concept<select id="sess-c"><option value="1">Wonderfully made</option><option value="2">Filter the voices</option><option value="3">Fall, don’t break</option><option value="4">Built on the rock</option><option value="5">Stored to be released</option><option value="7">Light for the community</option></select></label></div>
-<div class="dlrow"><button class="dlbtn" data-sess="" disabled="" type="button">Web file</button></div>
-<p class="ui-hint"><b>Web file</b> (about 150 KB): opens in any browser without internet, with the materials calculator. <b>PDF:</b> use Print → Save as PDF in your browser. Check the preview before saving.</p><p aria-live="polite" class="dlstatus" id="sess-status"></p></div>
-<div class="ui-pcard"><h3>The full toolkit</h3>
-<p>All six themes, guides, forms, and supplies, for leaders planning several sessions.</p>
-<div class="dlrow"><button class="dlbtn" data-pkg="1" disabled="" type="button">Web file</button></div>
-<p class="ui-hint"><b>Web file</b> (about 350 KB): works offline, including the planner and calculators. <b>PDF:</b> use Print → Save as PDF in your browser. The full toolkit can be lengthy.</p><p aria-live="polite" class="dlstatus" id="dlstatus">Checking whether downloads are available here…</p></div>
+</section><section class="view" data-view="download" data-website-only=""><h2>Download a Concept Pack</h2>
+<p class="lede">Get all the activities, instructions, Scripture reflections, and resources for one concept in a single download. Save your pack before your session so you can access it even without internet.</p>
+<p class="dlc-note">Each concept pack contains every activity in that concept, with materials, step-by-step instructions, illustrations, safety notes, Bible passage and reflection questions, the session plan, warm-ups, and the forms you need.</p>
+<div class="dlc-list" id="dl-concepts"></div>
+<p aria-live="polite" class="dlstatus" id="sess-status"></p>
+<div class="ui-pcard dlc-full"><h3>The full toolkit</h3>
+<p>All six concepts and their activities, plus the guides, forms, warm-ups, supplies list, and planner, in one file.</p>
+<div class="dlrow"><button class="dlbtn" data-pkg="1" type="button">Save for Offline Use</button></div>
+<p class="ui-hint"><b>Save for Offline Use</b> (about 3.5 MB): one web file that works without internet, including the planner and materials calculators. For printing, use a concept pack’s <b>Download PDF</b>.</p><p aria-live="polite" class="dlstatus" id="dlstatus"></p></div>
 <details class="sec"><summary><h3>Which should I choose?</h3></summary><div class="secbody"><ul class="plain">
-<li><b>Web file:</b> opens in any browser without internet, with tabs, the activity finder, the materials calculator, and the planner.</li>
-<li><b>PDF:</b> use your browser’s Print → Save as PDF option; check the preview and colour settings.</li>
-<li><b>Forms:</b> open the <a href="#kit">Forms</a> page, choose a form, then Print → Save as PDF if you need a file.</li>
+<li><b>Save for Offline Use:</b> a self-contained web file. Open it on a phone or computer without an internet connection.</li>
+<li><b>Download PDF:</b> a printable document for facilitators who prefer paper resources. It uses dark text on a white background to save ink.</li>
+<li><b>Forms:</b> every concept pack includes the consent, health, attendance, reflection, and incident forms, and each one prints on its own. They’re also on the <a href="#kit">Forms</a> page.</li>
 <li>Share files by WhatsApp, Bluetooth, or USB, like a photo.</li>
-</ul></div></details></section>
+</ul></div></details>
+<script data-website-only="">(function(){
+ function render(){var list=document.getElementById('dl-concepts');if(!list||list.children.length)return;
+ function slug(s){return String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+ document.querySelectorAll('.cview[data-view]').forEach(function(v){
+  var ci=v.dataset.view.slice(1),h=v.querySelector('h2'),sub=v.querySelector('.cview-head .sub');
+  var acts=[].map.call(v.querySelectorAll('details.act > summary h4'),function(x){return x.textContent.trim();});
+  if(!h)return;var name=h.textContent.trim();
+  var card=document.createElement('article');card.className='dlc-card';
+  var info=document.createElement('div');info.className='dlc-info';
+  var t=document.createElement('h3');t.textContent=name;info.appendChild(t);
+  if(sub){var p=document.createElement('p');p.className='dlc-sub';p.textContent=sub.textContent.trim();info.appendChild(p);}
+  var a=document.createElement('p');a.className='dlc-acts';var b=document.createElement('b');b.textContent=acts.length+' activities: ';a.appendChild(b);a.appendChild(document.createTextNode(acts.join(', ')));info.appendChild(a);
+  var act=document.createElement('div');act.className='dlc-actions';
+  var web=document.createElement('button');web.type='button';web.className='dlbtn';web.setAttribute('data-sess','');web.dataset.c=ci;web.dataset.name=name;web.textContent='Save for Offline Use';web.setAttribute('aria-label','Save '+name+' for offline use');
+  var pdf=document.createElement('a');pdf.className='dlbtn alt';pdf.href='downloads/identity-to-impact-'+slug(name)+'.pdf';pdf.setAttribute('download','identity-to-impact-'+slug(name)+'.pdf');pdf.textContent='Download PDF';pdf.setAttribute('aria-label','Download '+name+' as a PDF');
+  act.appendChild(web);act.appendChild(pdf);card.appendChild(info);card.appendChild(act);list.appendChild(card);
+ });
+}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render);else render();
+})();</script></section>
 <!-- LEADERS -->
 <section class="view" data-view="leaders">
 <h2>Running a program</h2>
@@ -1887,6 +1921,8 @@ main::before { display:none !important; }
       if (a.dataset.group === g && token !== 'download'){ a.setAttribute('aria-current','page'); try { a.scrollIntoView({block:'nearest', inline:'center'}); } catch(e){} }
       else { a.removeAttribute('aria-current'); }
     });
+    var dlLink = document.querySelector('.dl-pill');
+    if (dlLink){ if (token === 'download') dlLink.setAttribute('aria-current', 'page'); else dlLink.removeAttribute('aria-current'); }
     var pages = groups[g];
     if (token === 'first' && window.__i2iGuidedReset && scroll) window.__i2iGuidedReset();
     if (pages.length > 1 && token !== 'download' && token !== 'start' && token !== 'first'){
@@ -2019,29 +2055,134 @@ main::before { display:none !important; }
     return '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
   }
 
+  var PACK_CSS = ":root{color-scheme:light;--pk-green:#2E6A4E;--pk-deep:#1D2E26;--pk-cream:#FAF8F1;--pk-sage:#E2EEE6;--pk-sage-line:#C9DCCD;--pk-mustard:#F0B429;--pk-text:#1D2E26;--pk-muted:#4A5E53}html,body.pk{background:var(--pk-cream) !important;background-image:none !important}body.pk{margin:0;padding:0;color:var(--pk-text);font-family:var(--body);font-size:1.0625rem;line-height:1.6}body.pk::before,body.pk::after{display:none !important}.pk-wrap{max-width:50rem;margin:0 auto;padding:0 1.15rem;box-sizing:border-box}.pk-head{background:var(--pk-green);color:#FFFDF6;padding:1.7rem 0 1.5rem;border-bottom:6px solid var(--pk-mustard)}.pk-head .pk-k{margin:0;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FDF1D2}.pk-head h1{font-family:var(--display);font-size:clamp(2rem,7vw,2.9rem);line-height:1.08;margin:.35rem 0 .45rem;color:#FFFFFF;letter-spacing:-.01em}.pk-head .pk-lede{margin:0 0 .6rem;font-size:1.12rem;color:#FFFDF6}.pk-head .pk-meta{margin:0;font-size:.88rem;color:#E2EEE6}.pk-toc{background:var(--pk-sage);border-bottom:1px solid var(--pk-sage-line);padding:1rem 0 1.1rem}body.pk nav.pk-toc{display:block;max-width:none;margin:0;overflow:visible;-webkit-mask-image:none;mask-image:none;order:initial;flex-basis:auto}body.pk nav.pk-toc a{min-height:0}.pk-toc h2{margin:0 0 .55rem;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pk-green);font-family:var(--body)}.pk-toc ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}.pk-toc a{display:inline-block;padding:.42rem .85rem;border-radius:999px;background:#FFFFFF;border:1px solid var(--pk-sage-line);color:var(--pk-green);font-weight:700;font-size:.92rem;text-decoration:none;line-height:1.3}.pk-toc li.pk-sub a{background:#FFF8E6;border-color:#EBCB7E;color:#5A4300;font-weight:600}.pk-toc a:hover,.pk-toc a:focus-visible{background:var(--pk-green);color:#FFFFFF;border-color:var(--pk-green)}body.pk main{padding-top:1.4rem;padding-bottom:2rem}body.pk .view{display:block !important;max-width:none !important;margin:0 !important;padding:0 !important;background:none !important}body.pk .view[hidden]{display:block !important}.pk-sec,.pk-concept{padding:1.2rem 0 1.4rem !important;border-bottom:1px solid var(--pk-sage-line)}body.pk .tpanel{display:block !important;padding:1.2rem 0 .6rem;border:0 !important;margin-top:1rem}body.pk .cview-head{margin-bottom:.4rem}body.pk h2,body.pk h3,body.pk h4,body.pk h5{color:var(--pk-deep)}body.pk h2.pk-h,body.pk .view[data-view=\"warmups\"]>h2{font-family:var(--display);font-size:1.75rem;line-height:1.2;color:var(--pk-green);margin:0 0 1rem;padding-bottom:.3rem;border-bottom:3px solid var(--pk-mustard);display:inline-block}body.pk p,body.pk li,body.pk dd,body.pk td{color:var(--pk-text)}body.pk .ui-hint,body.pk .meta-line,body.pk .timenote,body.pk figcaption,body.pk .src-line{color:var(--pk-muted) !important}body.pk main a{color:var(--pk-green);font-weight:600;text-decoration:underline;text-decoration-color:var(--pk-mustard);text-decoration-thickness:2px;text-underline-offset:3px}body.pk main a:hover{color:var(--pk-deep);background:#FFF2D0}body.pk .pk-details.act{background:#FFFFFF;border:1px solid var(--pk-sage-line);border-left:6px solid var(--pk-green);border-radius:14px;padding:.4rem 1.1rem 1rem;margin:0 0 1.4rem;scroll-margin-top:1rem;box-shadow:none}body.pk .act>.pk-summary{list-style:none;cursor:pointer;padding:.6rem 0 .5rem;border-bottom:1px dashed var(--pk-sage-line);margin-bottom:.6rem}body.pk .act>.pk-summary::-webkit-details-marker{display:none}body.pk .act>.pk-summary h4{font-family:var(--display);font-size:1.45rem;color:var(--pk-green);margin:.1rem 0 .2rem}body.pk .pk-details.act .abody{display:block !important}body.pk .pk-details.act .abody>figure.illus-fig{display:block !important;position:static !important;max-width:34rem;margin:.6rem 0 1rem}body.pk .illus-fig img{width:100%;height:auto;border-radius:12px;background:#F4F7EF;border:1px solid var(--pk-sage-line)}body.pk .pk-details.act h5{font-size:1.08rem;color:var(--pk-green);margin:1.1rem 0 .35rem;text-transform:none;letter-spacing:0}body.pk ol.steps li{margin-bottom:.35rem}body.pk .pk-details.sec{background:#FFFFFF;border:1px solid var(--pk-sage-line);border-radius:12px;padding:.2rem 1rem .8rem;margin:0 0 .9rem}body.pk .sec>.pk-summary{list-style:none;padding:.6rem 0 .2rem;cursor:pointer}body.pk .sec>.pk-summary h3{margin:0;color:var(--pk-green);font-size:1.2rem}body.pk .sec>.pk-summary::-webkit-details-marker,body.pk .sec>.pk-summary::after{display:none !important;content:none !important}body.pk .form{background:#FFFFFF;border:1px solid var(--pk-sage-line);border-radius:12px;padding:1rem 1.1rem;margin:0 0 1rem;scroll-margin-top:1rem}body.pk .form h3{color:var(--pk-green)}body.pk .printbtn{float:right;margin:0 0 .5rem .8rem;min-height:40px;padding:.4rem .9rem;border-radius:999px;border:1.5px solid var(--pk-green);background:#FFFFFF;color:var(--pk-green);font:700 .9rem var(--body);cursor:pointer}body.pk .printbtn:hover{background:var(--pk-green);color:#FFFFFF}body.pk .formprev>.pk-summary{display:none}body.pk #pk-reflection-resources{background:#FFFFFF;border:1px solid var(--pk-sage-line);border-radius:12px;padding:1rem 1.1rem;margin:0 0 1.2rem}body.pk .pk-rhythms{display:grid;gap:.7rem;margin:.6rem 0}body.pk .pk-rhythms .pathway-step{border-left:4px solid var(--pk-mustard);background:#FFFBF0;border-radius:8px;padding:.5rem .9rem}body.pk .pk-rhythms h4{margin:.1rem 0 .3rem;color:var(--pk-green)}body.pk .pk-rhythms ul{margin:0;padding-left:0}.pk-top{margin:1rem 0 0;font-size:.9rem}.pk-foot{background:var(--pk-green);color:#FFFDF6;padding:1.2rem 0;font-size:.9rem;line-height:1.5;border-top:4px solid var(--pk-mustard)}.pk-foot b{color:#FFFFFF}@media (max-width:560px){body.pk{font-size:1.02rem}.pk-wrap{padding:0 1rem}.pk-toc a{font-size:.88rem;padding:.38rem .72rem}body.pk .pk-details.act{padding:.3rem .85rem .9rem;border-left-width:5px}body.pk .goals,body.pk .pnote{display:block !important}body.pk .goals>div,body.pk .pnote>div{margin-bottom:.6rem}body.pk .printbtn{float:none;display:block;margin:0 0 .6rem}body.pk table{font-size:.92rem;min-width:0 !important;width:100% !important;table-layout:fixed}body.pk td,body.pk th{overflow-wrap:anywhere}body.pk .min,body.pk .fl span{white-space:normal}body.pk .fl{flex-wrap:wrap}body.pk .fl i{min-width:40%}}@media print{@page{margin:16mm 14mm}html,body.pk{background:#FFFFFF !important}body.pk{font-size:11pt;line-height:1.45;color:#000}.pk-wrap{max-width:none;padding:0}.pk-head{background:none;border-bottom:2px solid var(--pk-green);padding:0 0 .5rem;color:#000}.pk-head .pk-k,.pk-head .pk-meta{color:#333}.pk-head h1{color:var(--pk-green);font-size:24pt}.pk-head .pk-lede{color:#000}.pk-toc,.pk-top,.printbtn,.pk-foot{display:none !important}body.pk main{padding:0}body.pk main a{color:#000;text-decoration:none;font-weight:inherit}body.pk .pk-details.act,body.pk .pk-details.sec,body.pk .form,body.pk #pk-reflection-resources{border:1px solid #BBB;border-left:3px solid var(--pk-green);box-shadow:none;background:#FFF}body.pk .pk-concept{break-before:auto !important;page-break-before:auto !important}#pk-identity,#pk-activities{break-before:page}body.pk .pk-details.act{break-before:page}#pk-activities>.pk-h+.pk-details.act{break-before:avoid;page-break-before:avoid}body.pk a[href=\"#pk-activities\"]{display:none !important}#pk-plan,#pk-guide,#pk-warmups,#pk-forms{break-before:page}body.pk .form{break-before:page}#pk-reflection-resources{break-inside:avoid}body.pk h2,body.pk h3,body.pk h4,body.pk h5{break-after:avoid}body.pk table{break-inside:auto}body.pk thead{display:table-header-group}body.pk figure,body.pk tr,body.pk li,body.pk .goals>div,body.pk .pnote>div,body.pk .refl>div,body.pk .opener,body.pk .callout,body.pk .pathway-step{break-inside:avoid}body.pk .illus-fig img{max-height:120mm;width:auto;max-width:100%;border:0;background:none}body.pk *{box-shadow:none !important;text-shadow:none !important}body.pk .ui-hint{display:block !important}body.pk:not(.printing-one) .form .fmeta{display:grid !important;font-size:9pt;color:#333;border-bottom:1px solid #BBB;padding-bottom:.4rem;margin-bottom:.6rem}body.pk:not(.printing-one) .form h3 .badge{display:inline-block !important}body.printing-one .pk-head,body.printing-one #pk-reflection-resources{display:none !important}body.printing-one .form.print-target{break-before:auto;border:0}}";
+  function packSlug(s){ return String(s).toLowerCase().replace(/[’']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  window.__i2iSlug = packSlug;
+
+  // Builds a self-contained concept pack: every activity in the concept, its Scripture and
+  // reflection, the session plan and guidance, warm-ups, and the forms, with no external files.
   function buildSession(ci, level){
     var src = new DOMParser().parseFromString(PRISTINE, 'text/html');
-    src.querySelectorAll('[data-website-only], .techopt, .only1, .backlink, .next, .mcalc, .act-actions').forEach(function(e){ e.remove(); });
-    if (level < 3) src.querySelectorAll('.lvl3').forEach(function(e){ e.remove(); });
-    if (level < 2) src.querySelectorAll('.lvl2').forEach(function(e){ e.remove(); });
+    function rm(e){ e.remove(); }
+    var formKey = {};
+    src.querySelectorAll('.form[id] [data-pdf-key]').forEach(function(b){ formKey[b.dataset.pdfKey] = b.closest('.form').id; });
+    src.querySelectorAll('[data-website-only], .techopt, .only1, .backlink, .next, .mcalc, .act-actions').forEach(rm);
+    if (level < 3) src.querySelectorAll('.lvl3').forEach(rm);
+    if (level < 2) src.querySelectorAll('.lvl2').forEach(rm);
     var view = src.querySelector('[data-view="c' + ci + '"]');
-    var title = view.querySelector('h2').textContent;
+    var title = view.querySelector('h2').textContent.trim();
+    var subEl = view.querySelector('.cview-head .sub');
+    var sub = subEl ? subEl.textContent.trim() : '';
+    view.querySelector('h2').remove(); if (subEl) subEl.remove();
+
+    // Tabs need JavaScript, so each tab becomes a titled section.
+    var tabNames = {};
+    view.querySelectorAll('.tabbar [data-tab]').forEach(function(b){ tabNames[b.dataset.tab] = b.textContent.trim(); });
+    view.querySelectorAll('.tabbar').forEach(rm);
+    var ids = { ov: 'pk-overview', id: 'pk-identity', act: 'pk-activities', plan: 'pk-plan' };
+    var heads = { ov: 'Overview', id: 'Identity: Scripture and reflection', act: 'Activities', plan: 'Session plan' };
+    view.querySelectorAll('.tpanel').forEach(function(p){
+      var k = p.dataset.panel; if (!ids[k]) return;
+      p.id = ids[k]; p.classList.add('on', 'pk-sec');
+      var h = src.createElement('h2'); h.className = 'pk-h'; h.textContent = heads[k] || tabNames[k] || k;
+      p.insertBefore(h, p.firstChild);
+    });
+    var acts = [];
+    view.querySelectorAll('details.act').forEach(function(d){
+      var name = d.querySelector('summary h4').textContent.trim();
+      d.id = 'act-' + packSlug(name); d.setAttribute('open', ''); acts.push([d.id, name]);
+    });
+    view.querySelectorAll('details').forEach(function(d){ d.setAttribute('open', ''); });
+    view.querySelectorAll('[data-panel="act"] > .ui-hint').forEach(function(p){ if (/^Tap an activity/.test(p.textContent.trim())) p.remove(); });
+    view.querySelectorAll('[data-tab]').forEach(function(b){
+      var a = src.createElement('a'); a.href = '#' + (ids[b.dataset.tab] || 'pk-activities'); a.textContent = b.textContent; b.replaceWith(a);
+    });
+    view.querySelectorAll('.glance li > b:first-child').forEach(function(b){
+      var hit = acts.filter(function(x){ return x[1].toLowerCase() === b.textContent.trim().toLowerCase(); })[0];
+      if (hit){ var a = src.createElement('a'); a.href = '#' + hit[0]; a.appendChild(b.cloneNode(true)); b.replaceWith(a); }
+    });
+
+    // Session guidance from the facilitator guide.
     var fac = src.querySelector('[data-view="facilitators"]');
     function from(h){ var ds = Array.prototype.filter.call(fac.querySelectorAll('details.sec'), function(d){ var x = d.querySelector('summary h3'); return x && x.textContent.trim() === h; }); if (!ds.length) return ''; var d = ds[0].cloneNode(true); d.setAttribute('open', ''); d.querySelectorAll('.callout').forEach(function(c){ c.remove(); }); return d.outerHTML; }
-    var guide = from('The session flow') + from('Starting well') + from('Talking about failure');
+    var guide = ['Before each session', 'The session flow', 'Starting well', 'Team roles', 'Talking about failure', 'Leading reflection', 'Include everyone in the room'].map(from).join('');
     Array.prototype.forEach.call(fac.querySelectorAll('.callout.warn'), function(c){ guide += c.outerHTML; });
-    var forms = ['f-consent', 'f-health', 'f-attend', 'f-agree', 'f-disclosure'].map(function(id){ var f = src.getElementById(id); return f ? f.outerHTML : ''; }).join('');
-    var names = ['', 'Unplugged', 'One device', 'Connected'];
-    var head = src.head; head.querySelector('title').textContent = 'Identity to Impact: ' + title;
-    var sc = Array.prototype.slice.call(head.querySelectorAll('script')); sc.forEach(function(x){ x.remove(); });
-    var js = "(function(){document.addEventListener('click',function(e){var b=e.target.closest('[data-print]');if(!b)return;var t=document.getElementById(b.dataset.print);if(!t)return;document.body.classList.add('printing-one');t.classList.add('print-target');function d(){document.body.classList.remove('printing-one');t.classList.remove('print-target');window.removeEventListener('afterprint',d);}window.addEventListener('afterprint',d);try{window.print();}catch(x){d();}});window.addEventListener('beforeprint',function(){if(document.body.classList.contains('printing-one'))return;document.querySelectorAll('details').forEach(function(d){d.open=true;});});})();";
-    var extra = '<style>.sess-head{max-width:46rem;margin:0 auto;padding:1.6rem 1.15rem .4rem}.sess-head .k{font-weight:700;color:var(--leaf);letter-spacing:.04em}.sess-head h1{font-family:var(--display);font-size:2.4rem;margin:.2rem 0}.sess-head p{color:var(--muted);margin:0}@media print{body.printing-one .sess-head{display:none !important}}</style>';
-    return '<!DOCTYPE html>\n<html lang="en" data-package-level="' + level + '">' + head.outerHTML.replace('</head>', extra + '</head>') +
-      '<body data-level="' + level + '"><header class="sess-head"><div class="k">Identity to Impact \u00b7 Session pack</div></header><main>' +
-      '<section class="view" data-view="c">' + view.innerHTML + '</section>' +
-      '<section class="view" data-view="guide"><h2>Running the session</h2>' + guide + '</section>' +
-      '<section class="view" data-view="kit"><h2>Forms for this session</h2><p>Consent and health forms are required for every young person. Each form prints on its own.</p>' + forms + '</section>' +
-      '</main><script>' + js + '<\/script>\n</body></html>';
+
+    // Warm-ups, for the session's opening game.
+    var wu = src.querySelector('[data-view="warmups"]');
+    var warm = wu ? wu.innerHTML : '';
+
+    // Reflection resources: the planner's suggested rhythms, written out for every program length.
+    var rp = src.getElementById('reflection-pathway'), rhythm = '';
+    if (rp){
+      rp = rp.cloneNode(true);
+      var opts = Array.prototype.map.call(rp.querySelectorAll('#pathway-type option'), function(o){ return [o.value, o.textContent.trim()]; });
+      var plans = window.__i2iPathways || {};
+      var steps = rp.querySelector('#pathway-steps');
+      var list = src.createElement('div'); list.className = 'pk-rhythms';
+      opts.forEach(function(o){
+        var box = src.createElement('div'); box.className = 'pathway-step';
+        var h = src.createElement('h4'); h.textContent = o[1]; box.appendChild(h);
+        var ul = src.createElement('ul'); ul.className = 'plain';
+        (plans[o[0]] || []).forEach(function(s){
+          var li = src.createElement('li'), b = src.createElement('b'); b.textContent = s[0] + ': '; li.appendChild(b);
+          li.appendChild(src.createTextNode(s[1]));
+          if (s[2] && formKey[s[2]]){ li.appendChild(src.createTextNode(' Form: ')); var a = src.createElement('a'); a.href = '#' + formKey[s[2]]; a.textContent = String(s[3] || '').replace(/ PDF$/, ''); li.appendChild(a); li.appendChild(src.createTextNode('.')); }
+          ul.appendChild(li);
+        });
+        box.appendChild(ul); list.appendChild(box);
+      });
+      rp.querySelectorAll('#pathway-type, .pathway-label').forEach(rm);
+      if (steps) steps.replaceWith(list);
+      rp.removeAttribute('id'); rp.id = 'pk-reflection-resources';
+      rhythm = rp.outerHTML;
+    }
+
+    // Forms: each prints on its own from the pack.
+    var formIds = ['f-consent', 'f-health', 'f-attend', 'f-agree', 'f-score', 'f-identity', 'f-tracker', 'f-final', 'f-incident', 'f-disclosure'];
+    var forms = formIds.map(function(id){
+      var f = src.getElementById(id); if (!f) return '';
+      f = f.cloneNode(true);
+      f.querySelectorAll('.pdf-open').forEach(function(b){ var p = src.createElement('button'); p.type = 'button'; p.className = 'printbtn'; p.setAttribute('data-print', id); p.textContent = 'Print this form'; b.replaceWith(p); });
+      f.querySelectorAll('details').forEach(function(d){ d.setAttribute('open', ''); });
+      return f.outerHTML;
+    }).join('');
+
+    // Head: keep the toolkit's styles, drop scripts and anything fetched from the internet.
+    var head = src.head; head.querySelector('title').textContent = 'Identity to Impact: ' + title + ' (concept pack)';
+    head.querySelectorAll('script, link').forEach(rm);
+    var js = "(function(){function openIn(t){t.querySelectorAll('details').forEach(function(d){d.open=true;});}document.addEventListener('click',function(e){var b=e.target.closest('[data-print]');if(!b)return;var t=document.getElementById(b.dataset.print);if(!t)return;openIn(t);document.body.classList.add('printing-one');t.classList.add('print-target');function d(){document.body.classList.remove('printing-one');t.classList.remove('print-target');window.removeEventListener('afterprint',d);}window.addEventListener('afterprint',d);try{window.print();}catch(x){d();}});window.addEventListener('beforeprint',function(){if(document.body.classList.contains('printing-one'))return;openIn(document);});document.addEventListener('click',function(e){var a=e.target.closest('a[href^=\"#\"]');if(!a)return;var t=document.getElementById(a.getAttribute('href').slice(1));if(t&&t.tagName==='DETAILS')t.open=true;});})();";
+    var css = PACK_CSS;
+    var toc = '<li><a href="#pk-overview">Overview</a></li><li><a href="#pk-identity">Scripture and reflection</a></li><li><a href="#pk-activities">Activities</a></li>' +
+      acts.map(function(a){ return '<li class="pk-sub"><a href="#' + a[0] + '">' + a[1] + '</a></li>'; }).join('') +
+      '<li><a href="#pk-plan">Session plan</a></li><li><a href="#pk-guide">Running the session</a></li>' + (warm ? '<li><a href="#pk-warmups">Warm-ups</a></li>' : '') + '<li><a href="#pk-forms">Forms and reflection resources</a></li>';
+    function esc(s){ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+    var top = '<p class="pk-top"><a href="#pk-contents">↑ Back to contents</a></p>';
+    var html = '<!DOCTYPE html>\n<html lang="en" data-theme="light" data-package-level="' + level + '">' +
+      head.outerHTML.replace('</head>', '<meta name="color-scheme" content="light"/><style id="pk-style">' + css + '</style></head>') +
+      '<body class="pk" data-level="' + level + '">' +
+      '<header class="pk-head"><div class="pk-wrap"><p class="pk-k">Identity to Impact · Concept pack</p><h1>' + esc(title) + '</h1>' + (sub ? '<p class="pk-lede">' + esc(sub) + '</p>' : '') +
+      '<p class="pk-meta">' + acts.length + ' activities · Works without internet · Print any section with your browser’s Print option</p></div></header>' +
+      '<nav class="pk-toc" id="pk-contents" aria-label="In this pack"><div class="pk-wrap"><h2>In this pack</h2><ol>' + toc + '</ol></div></nav><main class="pk-wrap">' +
+      '<section class="view cview pk-concept" data-view="c">' + view.innerHTML + top + '</section>' +
+      '<section class="view pk-sec" data-view="guide" id="pk-guide"><h2 class="pk-h">Running the session</h2>' + guide + top + '</section>' +
+      (warm ? '<section class="view pk-sec" data-view="warmups" id="pk-warmups">' + warm + top + '</section>' : '') +
+      '<section class="view pk-sec" data-view="kit" id="pk-forms"><h2 class="pk-h">Forms and reflection resources</h2><p>Consent and health forms are required for every young person. Each form has its own Print button.</p>' + rhythm + forms + top + '</section>' +
+      '</main><footer class="pk-foot"><div class="pk-wrap"><b>Identity to Impact</b> · Hands-on STEM learning, rooted in faith. Free for educational and ministry use.<br/>Saved from identity-to-impact.vercel.app</div></footer>' +
+      '<script>' + js + '<\/script>\n</body></html>';
+    // Links that pointed at website pages: keep the ones that exist in the pack, turn the rest into plain text.
+    var out = new DOMParser().parseFromString(html, 'text/html');
+    out.querySelectorAll('img[loading]').forEach(function(i){ i.removeAttribute('loading'); });
+    // Everything is shown, so plain sections replace <details>: browsers don't split <details> content across printed pages.
+    function unfold(sel, cls){ out.querySelectorAll(sel).forEach(function(d){ var n = out.createElement('div'); Array.prototype.forEach.call(d.attributes, function(a){ if (a.name !== 'open') n.setAttribute(a.name, a.value); }); n.classList.add(cls); while (d.firstChild) n.appendChild(d.firstChild); d.replaceWith(n); }); }
+    unfold('details', 'pk-details'); unfold('summary', 'pk-summary');
+    var remap = { kit: 'pk-forms', warmups: 'pk-warmups', facilitators: 'pk-guide' }; remap['c' + ci] = 'pk-overview';
+    out.querySelectorAll('main a[href^="#"]').forEach(function(a){
+      var t = a.getAttribute('href').slice(1);
+      if (remap[t] && out.getElementById(remap[t])) a.setAttribute('href', '#' + remap[t]);
+      else if (!t || !out.getElementById(t)){ var s = out.createElement('span'); s.innerHTML = a.innerHTML; a.replaceWith(s); }
+    });
+    return '<!DOCTYPE html>\n' + out.documentElement.outerHTML;
   }
   window.__i2iSession = buildSession;
   document.addEventListener('click', function(e){
@@ -2067,8 +2208,8 @@ main::before { display:none !important; }
         document.addEventListener('click', function(e){
           var sb = e.target.closest('[data-sess]');
           if (sb){
-            var ci = +sessC.value, lvn = 1, nm = sessC.options[sessC.selectedIndex].text;
-            var slug = nm.toLowerCase().replace(/[’']/g, '').replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+            var ci = +(sb.dataset.c || sessC.value), lvn = 1, nm = sb.dataset.name || sessC.options[sessC.selectedIndex].text;
+            var slug = packSlug(nm);
             sessStatus.textContent = 'Preparing the ' + nm + ' session pack…';
             dl.save({ filename: 'identity-to-impact-' + slug + '.html', data: buildSession(ci, lvn) })
               .then(function(){ sessStatus.textContent = nm + ' session pack saved.'; })
@@ -2883,7 +3024,9 @@ main::before { display:none !important; }
       return;
     }
     var t = e.target.closest('[data-pick-theme]');
-    if (t){ var sc = document.getElementById('sess-c'); if (sc) sc.value = t.dataset.pickTheme; }
+    if (t){ var sc = document.getElementById('sess-c'); if (sc) sc.value = t.dataset.pickTheme;
+      var pick = t.dataset.pickTheme;
+      setTimeout(function(){ var b = document.querySelector('#dl-concepts [data-sess][data-c="' + pick + '"]'); if (!b) return; var card = b.closest('.dlc-card'); document.querySelectorAll('.dlc-picked').forEach(function(x){ x.classList.remove('dlc-picked'); }); card.classList.add('dlc-picked'); try { card.scrollIntoView({block:'center'}); } catch(x){} b.focus({preventScroll:true}); }, 60); }
     var o = e.target.closest('[data-open-session]');
     if (o){ e.preventDefault(); try { history.replaceState(null, '', '#plan'); } catch(x){} show('plan', true); if (window.__i2iOpenSheet) window.__i2iOpenSheet(o.dataset.openSession); }
   }, true);
@@ -2931,10 +3074,10 @@ main::before { display:none !important; }
     a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
     setTimeout(function(){URL.revokeObjectURL(url);},1500);
   }
-  function snapshot(level){
-    var doc=new DOMParser().parseFromString('<!DOCTYPE html>\n'+document.documentElement.outerHTML,'text/html');
+  function snapshot(level,source){
+    var doc=new DOMParser().parseFromString(source||('<!DOCTYPE html>\n'+document.documentElement.outerHTML),'text/html');
     doc.documentElement.setAttribute('data-package-level',String(level));
-    doc.querySelectorAll('[data-website-only]').forEach(function(el){el.remove();});
+    doc.querySelectorAll('[data-website-only], head link').forEach(function(el){el.remove();});
     if(level<3)doc.querySelectorAll('.lvl3').forEach(function(el){el.remove();});
     if(level<2)doc.querySelectorAll('.lvl2').forEach(function(el){el.remove();});
     doc.title='Identity to Impact Toolkit (offline)';
@@ -2943,14 +3086,18 @@ main::before { display:none !important; }
   document.querySelectorAll('[data-pkg],[data-sess]').forEach(function(b){b.disabled=false;});
   document.addEventListener('click',function(e){
     var pack=e.target.closest('[data-pkg]');
-    if(pack){e.preventDefault();saveHtml('identity-to-impact-toolkit-offline.html',snapshot(Number(pack.dataset.pkg)||1));return;}
+    if(pack){e.preventDefault();var lv=Number(pack.dataset.pkg)||1;
+      // Build from the page as published, not as the visitor has changed it (open plans, tabs, filters).
+      fetch(location.pathname,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('fetch');return r.text();})
+        .then(function(src){return snapshot(lv,src);},function(){return snapshot(lv);})
+        .then(function(html){saveHtml('identity-to-impact-toolkit-offline.html',html);});
+      return;}
     var sess=e.target.closest('[data-sess]');
-    if(sess){e.preventDefault();var select=document.getElementById('sess-c');var ci=Number(select&&select.value)||1;
+    if(sess){e.preventDefault();var ci=Number(sess.dataset.c)||1;
       if(typeof window.__i2iSession==='function'){
-        var name=select&&select.options[select.selectedIndex]?select.options[select.selectedIndex].text:'session';
-        var slug=name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-        saveHtml('identity-to-impact-'+slug+'.html',window.__i2iSession(ci,1));
-        var status=document.getElementById('sess-status');if(status)status.textContent='Session pack saved.';
+        var name=sess.dataset.name||'concept';
+        saveHtml('identity-to-impact-'+window.__i2iSlug(name)+'.html',window.__i2iSession(ci,1));
+        var status=document.getElementById('sess-status');if(status)status.textContent=name+' pack saved. Open it from your Downloads folder, even without internet.';
       }return;}
     var pdf=e.target.closest('[data-pdf],[data-sesspdf],[data-formpdf]');
     if(pdf){e.preventDefault();
@@ -2962,7 +3109,7 @@ main::before { display:none !important; }
     b.disabled=false;b.title='Use your browser’s Print → Save as PDF';
   });
   var s=document.getElementById('dlstatus');
-  if(s)s.textContent='Web downloads work on this site. For PDFs, open the relevant content and choose Print → Save as PDF in your browser.';
+  if(s)s.textContent='';
 })();
 </script>
 <script>(function(){function init(){const q=document.getElementById('itl-query');const btns=[...document.querySelectorAll('#itl-categories button')];const cards=[...document.querySelectorAll('.itl-card')];if(!q||!cards.length)return;let cat='all';function apply(){const query=q.value.trim().toLowerCase();let shown=0;cards.forEach(card=>{let ok=(cat==='all'||card.dataset.subjects.includes(cat))&&(!query||card.dataset.title.includes(query)||card.textContent.toLowerCase().includes(query));card.hidden=!ok;if(ok)shown++;});document.getElementById('itl-count').textContent=shown+' of '+cards.length+' activities';}q.addEventListener('input',apply);btns.forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.cat;btns.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));apply();}));apply();}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();</script>
@@ -3041,6 +3188,7 @@ main::before { display:none !important; }
  week:[['Beginning','Use an Identity Check as a starting point; writing is optional.','form-9','Identity Check PDF'],['Middle','Pick a practical Live It Out action and discuss progress later.','form-10','Live It Out PDF'],['Final day','Close with a brief written, drawn, or spoken reflection.','form-11','Final Reflection PDF']],
  series:[['Early sessions','Invite an initial Identity Check.','form-9','Identity Check PDF'],['Midway','Revisit learning with a Live It Out action.','form-10','Live It Out PDF'],['Last session','Use Final Reflection to look back and choose a next step.','form-11','Final Reflection PDF']]
  };
+ window.__i2iPathways=plans;
  const chooser=document.getElementById('pathway-type'),out=document.getElementById('pathway-steps');
  if(!chooser||!out)return;
  function draw(){out.replaceChildren();(plans[chooser.value]||plans.one).forEach(([time,description,key,label])=>{
